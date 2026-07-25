@@ -2,6 +2,8 @@
 
 [![Notebook validation](https://github.com/Jnapier2/chicago-food-inspections-analysis/actions/workflows/notebook.yml/badge.svg)](https://github.com/Jnapier2/chicago-food-inspections-analysis/actions/workflows/notebook.yml)
 
+[Portfolio](https://jerry-napier-portfolio.netlify.app/) · [GitHub profile](https://github.com/Jnapier2)
+
 ## Abstract
 
 This descriptive study compares recorded food-inspection outcomes and facility-risk classifications in Chicago ZIP codes 60607, 60610, and 60622 from January 5, 2010, through June 13, 2018. Across 13,333 inspection records, 60622 has the highest recorded failure share, while 60607 has the highest share classified as `Risk 1 (High)`. The divergence within this extract shows why outcome and facility-risk measures should be evaluated separately when framing follow-up analysis. Each row represents an inspection, not a unique establishment.
