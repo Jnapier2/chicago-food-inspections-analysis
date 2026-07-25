@@ -93,3 +93,11 @@ A refresh may change the record count or calculated shares if the City has revis
 Napier, Jerry R. *Chicago Food Inspection Outcomes in Three ZIP Codes, 2010–2018*. Revised 2026.
 
 Source data: City of Chicago, Chicago Department of Public Health, *Food Inspections*, dataset `4ijn-s7e5`.
+
+## Portfolio and rights
+
+[Portfolio](https://jerry-napier-portfolio.netlify.app/) · [GitHub profile](https://github.com/Jnapier2)
+
+Copyright © 2026 Gateway Information Group LLC. All rights reserved.
+
+This notice applies only to original project materials. The bundled City of Chicago data remains subject to the source publisher's terms. See [LICENSE.md](LICENSE.md).
