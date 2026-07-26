@@ -65,11 +65,12 @@ The leading ZIP differs by measure: 60622 has the highest recorded failure share
 
 ## Reproducibility
 
-The notebook is tested with Python 3.12.
+The notebook is tested with Python 3.12. Its exact dependency pins were reviewed on July 26, 2026 and intentionally remain within the validated major-version lines. CI installs binary distributions only, checks the resolved environment with `pip check`, runs the offline retrieval tests, and then executes the notebook from the bundled snapshot.
 
 ```bash
 python -m venv .venv
-python -m pip install -r requirements.txt
+python -m pip install --only-binary=:all: -r requirements.txt
+python -m pip check
 python -m jupyter nbconvert --execute --to notebook --inplace notebooks/chicago_food_inspections.ipynb
 ```
 
