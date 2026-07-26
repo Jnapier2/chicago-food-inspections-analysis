@@ -25,6 +25,7 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+          cache-dependency-path: requirements.txt
       - name: Install exact binary dependencies
         run: python -m pip install --only-binary=:all: --requirement requirements.txt
       - name: Verify installed dependency consistency
