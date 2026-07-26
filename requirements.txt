@@ -1,4 +1,6 @@
-ipykernel==6.29.5
-matplotlib==3.10.3
+# Exact Python 3.12 notebook environment, reviewed July 26, 2026.
+# Minor/patch updates stay within the validated major-version lines.
+ipykernel==6.31.0
+matplotlib==3.10.9
 nbconvert==7.17.1
-pandas==2.3.1
+pandas==2.3.3
