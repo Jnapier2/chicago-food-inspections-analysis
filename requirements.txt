@@ -3,4 +3,4 @@
 ipykernel==6.31.0
 matplotlib==3.11.1
 nbconvert==7.17.1
-pandas==2.3.3
+pandas==3.0.5
