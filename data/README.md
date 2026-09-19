@@ -27,4 +27,26 @@ python scripts/fetch_data.py
 
 The script validates the header, row identifiers, ZIP-code scope, and both date boundaries before replacing the snapshot. Offline regression tests also confirm the exact Socrata query and inclusive-start/exclusive-end behavior. It prints the row count and SHA-256 checksum needed to update this file.
 
+## Refresh validation and failure behavior
+
+The helper now limits a response to 16 MiB before CSV decoding and rejects extra or
+missing row fields, malformed quoted records, duplicate identifiers, and timestamps
+that introduce a timezone into the study's floating-date comparisons. Existing
+selection, ordering, inclusive-start/exclusive-end bounds, and result categories are
+unchanged. A socket timeout must be an integer from 1 through 300 seconds; it is not
+a guaranteed wall-clock deadline for the whole transfer.
+
+The default snapshot path is relative to the script's repository, not the shell's
+working directory. An explicit `--output` remains a user-selected destination.
+`--check-only` still performs a live request, but never replaces the local snapshot.
+Handled fetch, validation, and write errors return exit code 2. Validation completes
+before publication, and failed atomic replacement preserves the previous file.
+
+These changes were tested with synthetic responses only. They do not refresh the
+snapshot or re-execute the notebook; the historical rows and checksum above are
+retained provenance, not a new data verification. Live-source changes require a
+separate, deliberate refresh and review.
+
+Copyright © 2026 Gateway Information Group LLC. All rights reserved.
+
 The City of Chicago's terms apply to the source data. This repository does not grant a separate license for the snapshot.
