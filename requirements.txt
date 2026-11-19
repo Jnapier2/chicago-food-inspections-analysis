@@ -2,5 +2,5 @@
 # Minor/patch updates stay within the validated major-version lines.
 ipykernel==6.31.0
 matplotlib==3.11.1
-nbconvert==7.17.1
+nbconvert==7.17.2
 pandas==2.3.3
