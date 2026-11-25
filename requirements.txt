@@ -1,5 +1,4 @@
-# Exact Python 3.12 notebook environment, reviewed July 26, 2026.
-# Minor/patch updates stay within the validated major-version lines.
+# Direct notebook dependency pins used by the Python 3.12 validation workflow.
 ipykernel==6.31.0
 matplotlib==3.11.1
 nbconvert==7.17.2

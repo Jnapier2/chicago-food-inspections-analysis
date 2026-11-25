@@ -65,13 +65,24 @@ The leading ZIP differs by measure: 60622 has the highest recorded failure share
 
 ## Reproducibility
 
-The notebook is tested with Python 3.12. Its exact dependency pins were reviewed on July 26, 2026 and intentionally remain within the validated major-version lines. CI installs binary distributions only, checks the resolved environment with `pip check`, runs the offline retrieval tests, and then executes the notebook from the bundled snapshot.
+Notebook validation uses Python 3.12. From the repository folder, create a virtual environment and install the pinned notebook dependencies there. The notebook then runs against the bundled snapshot and saves a separate executed copy in `.notebook-review/`.
+
+**Windows PowerShell**
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --only-binary=:all: -r requirements.txt
+.\.venv\Scripts\python.exe -m pip check
+.\.venv\Scripts\python.exe -m nbconvert --execute --to notebook --output-dir .notebook-review --output chicago_food_inspections_executed.ipynb notebooks/chicago_food_inspections.ipynb
+```
+
+**macOS or Linux**
 
 ```bash
-python -m venv .venv
-python -m pip install --only-binary=:all: -r requirements.txt
-python -m pip check
-python -m jupyter nbconvert --execute --to notebook --inplace notebooks/chicago_food_inspections.ipynb
+python3.12 -m venv .venv
+.venv/bin/python -m pip install --only-binary=:all: -r requirements.txt
+.venv/bin/python -m pip check
+.venv/bin/python -m nbconvert --execute --to notebook --output-dir .notebook-review --output chicago_food_inspections_executed.ipynb notebooks/chicago_food_inspections.ipynb
 ```
 
 To refresh the snapshot from the official API:
